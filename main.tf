@@ -13,6 +13,9 @@ resource "aws_instance" "example" {
 }
 resource "aws_key_pair" "web-host" {
   key_name   = "web-host"
-  public_key = file("C:/Users/Acer/.ssh/id_rsa.pub")
-}
+  public_key = var.public_key
 
+variable "public_key" {
+  description = "Public SSH key content"
+  type        = string
+}
