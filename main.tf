@@ -19,3 +19,8 @@ variable "public_key" {
   description = "Public SSH key content"
   type        = string
 }
+
+
+output "instance_public_ip" {
+  value = aws_instance.example.public_ip
+}
