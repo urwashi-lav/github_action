@@ -6,7 +6,7 @@ resource "aws_instance" "example" {
   ami             = "ami-0b7de67988bf1a282" # Replace with your desired AMI
   instance_type   = "t2.micro"
   key_name        = aws_key_pair.web-host.key_name
-  security_groups = [aws_security_group.web_sg.name]
+  vpc_security_group_ids = [aws_security_group.web_sg.name]
 
   tags = {
     Name = "GitHubActionsEC2-test1"
