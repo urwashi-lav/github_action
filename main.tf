@@ -3,17 +3,17 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami                    = "ami-0b7de67988bf1a282" # Replace with your desired AMI
-  instance_type          = "t2.micro"
+  ami                    = var.ami# Replace with your desired AMI
+  instance_type          = var.instance_type
   key_name               = aws_key_pair.web-host.key_name
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
   tags = {
-    Name = "GitHubActionsEC2-test1"
+    Name = "${terraform.workspace}-ec2"
   }
 }
 resource "aws_security_group" "web_sg" {
-  name        = "web-server-sg"
+  name        = "${terraform.workspace}sg"
   description = "Allow SSH and HTTP"
 
   ingress {
@@ -39,21 +39,12 @@ resource "aws_security_group" "web_sg" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags = {
-    Name = "web-sg"
-  }
 }
 resource "aws_key_pair" "web-host" {
   key_name   = "web-host"
   public_key = var.public_key
 }
-variable "public_key" {
-  description = "Public SSH key content"
-  type        = string
-}
 
 
-output "instance_public_ip" {
-  value = aws_instance.example.public_ip
-}
+
+
