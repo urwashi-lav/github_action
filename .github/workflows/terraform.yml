@@ -26,10 +26,10 @@ jobs:
       uses: hashicorp/setup-terraform@v3
 
     - name: Terraform Init
-        run: terraform init
+      run: terraform init
 
-      - name: Select/Create Workspace
-        run: |
+    - name: Select/Create Workspace
+      run: |
           terraform workspace list
           terraform workspace select "${{ github.event.inputs.environment }}" || terraform workspace new "${{ github.event.inputs.environment }}"
         
