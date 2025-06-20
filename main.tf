@@ -9,11 +9,11 @@ resource "aws_instance" "example" {
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
   tags = {
-    Name = "${terraform.workspace}-ec2"
+    Name = "infra-ec2"
   }
 }
 resource "aws_security_group" "web_sg" {
-  name        = "${terraform.workspace}sg"
+  name        = "infra-sg"
   description = "Allow SSH and HTTP"
 
   ingress {
