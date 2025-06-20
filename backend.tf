@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "gitaction-backend"
-    key            = "terraform/terraform.tfstate"
+    key            = "github/terraform.tfstate"
     region         = "ap-south-1"
     encrypt        = true
     dynamodb_table = "terraform-my-lock-table"
