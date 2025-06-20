@@ -1,6 +1,6 @@
 variable "public_key" {
   description = "Public SSH key content"
-  type = string
+  default = file("c:/users/acer/.ssh/web-host.pub")
 }
 
 variable "ami" {
