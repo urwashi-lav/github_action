@@ -1,12 +1,9 @@
 name: Terraform EC2 Deployment
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "Terraform workspace (dev, stage, prod)"
-        required: true
-        default: "dev"
+  push:
+    branches:
+      - main
 
 
 jobs:
