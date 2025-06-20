@@ -41,7 +41,7 @@ resource "aws_security_group" "web_sg" {
   }
 }
 resource "aws_key_pair" "web-host" {
-  key_name   = "web-host"
+  key_name   = "web-host-unique"
   public_key = var.web_host_pub
 }
 
