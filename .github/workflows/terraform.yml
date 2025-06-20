@@ -15,7 +15,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: ap-south-1  # Optional, but recommended
-      WEB_HOST_PUB: ${{ secrets.WEB_HOST_PUB }}
+      TF_VAR_web_host_pub: ${{ secrets.WEB_HOST_PUB }}
 
     steps:
     - name: Checkout repository
