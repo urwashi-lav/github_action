@@ -4,6 +4,6 @@ terraform {
     key            = "github/terraform.tfstate"
     region         = "ap-south-1"
     encrypt        = true
-    dynamodb_table = "git-lock-table"
+    dynamodb_table = "gituri-lock-table"
   }
 }
