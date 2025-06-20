@@ -1,7 +1,7 @@
-variable "public_key" {
-  description = "Public SSH key content"
-  default = file("c:/users/acer/.ssh/web-host.pub")
-}
+# variable "public_key" {
+#   description = "Public SSH key content"
+#   default = file("c:/users/acer/.ssh/web-host.pub")
+# }
 
 variable "ami" {
     description = "ami id is dofferent to different workspace env."

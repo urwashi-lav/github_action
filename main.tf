@@ -42,7 +42,7 @@ resource "aws_security_group" "web_sg" {
 }
 resource "aws_key_pair" "web-host" {
   key_name   = "web-host"
-  public_key = var.public_key
+  public_key = file("c:/users/acer/.ssh/web-host.pub")
 }
 
 
